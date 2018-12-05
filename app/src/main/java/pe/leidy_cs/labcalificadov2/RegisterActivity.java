@@ -45,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private GoogleMap mMap;
 
-    private LatLng var;
+    private String var;
 
     private EditText nombreInput;
 
@@ -104,18 +104,9 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onMapClick(LatLng latLng) {
                 Toast.makeText(RegisterActivity.this, "onMapClick: " + latLng, Toast.LENGTH_LONG).show();
-                var = latLng;
+                var = latLng.toString();
             }
         });
-
-        // Set OnMapLongClickListener
-        mMap.setOnMapLongClickListener(new GoogleMap.OnMapLongClickListener() {
-            @Override
-            public void onMapLongClick(LatLng latLng) {
-                Toast.makeText(RegisterActivity.this, "onMapLongClick: " + latLng, Toast.LENGTH_LONG).show();
-            }
-        });
-
 
         // Set a marker: http://www.bufa.es/google-maps-latitud-longitud
 
@@ -124,8 +115,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         // Marker: https://developers.google.com/maps/documentation/android-api/marker?hl=es-419
         MarkerOptions markerOptions = new MarkerOptions().position(latLng)
-                .title("Mi Primer Marcador")
-                .snippet("Descripción del marcador...");
+                .title("Marcador")
+                .snippet("Mi ubicación...");
         Marker marker = mMap.addMarker(markerOptions);
 
         // Show InfoWindow
@@ -155,51 +146,6 @@ public class RegisterActivity extends AppCompatActivity {
                 return view;
             }
         });
-
-        // Set OnInfoWindowClickListener
-        mMap.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
-            @Override
-            public void onInfoWindowClick(Marker marker) {
-                Toast.makeText(RegisterActivity.this, "onInfoWindowClick: " + marker.getTitle() + "\n" +
-                        marker.getPosition(), Toast.LENGTH_LONG).show();
-            }
-        });
-
-        // Set OnMarkerClickListener
-        mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
-            @Override
-            public boolean onMarkerClick(Marker marker) {
-                Toast.makeText(RegisterActivity.this, "onMarkerClick: " + marker.getTitle() + "\n" +
-                        marker.getPosition(), Toast.LENGTH_LONG).show();
-                return false;
-            }
-        });
-
-        // Draggable
-        marker.setDraggable(true);  // Presionar el marcador por unos segundos para activar 'drag'
-
-        // Set OnMarkerDragListener
-        mMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
-            @Override
-            public void onMarkerDragStart(Marker marker) {
-                Log.d(TAG, "onMarkerDragStart: " + marker.getTitle());
-            }
-
-            @Override
-            public void onMarkerDrag(Marker marker) {
-                Log.d(TAG, "onMarkerDrag: " + marker.getTitle());
-            }
-
-            @Override
-            public void onMarkerDragEnd(Marker marker) {
-                Log.d(TAG, "onMarkerDragEnd: " + marker.getTitle());
-                Toast.makeText(RegisterActivity.this, "onMarkerDragEnd: " + marker.getTitle() + "\n" +
-                        marker.getPosition(), Toast.LENGTH_LONG).show();
-            }
-        });
-
-        // Remove all markers
-        //mMap.clear();
 
         // Set current position camera
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, 14));
@@ -313,6 +259,9 @@ public class RegisterActivity extends AppCompatActivity {
         DatabaseReference postsRef = FirebaseDatabase.getInstance().getReference("posts");
         DatabaseReference postRef = postsRef.push();
 
+        if(var == null){
+            var = "No especificó";
+        }
         Post post = new Post();
         post.setId(postRef.getKey());
         post.setNombre(nombre);

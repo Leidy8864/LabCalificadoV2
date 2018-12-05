@@ -28,13 +28,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Capturar ubicacion"
-        android:layout_below="@+id/title_panel"/>
+        android:textSize="16dp"
+        android:layout_below="@id/title_panel"/>
+
+    <TextView
+        android:id="@+id/texto2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="(Click a su ubicación en el mapa)"
+        android:textSize="16dp"
+        android:layout_below="@id/texto"/>
 
     <RelativeLayout
         android:id="@+id/bottom_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/texto"
+        android:layout_below="@+id/texto2"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="16dp">
 
@@ -43,13 +52,6 @@
             android:name="com.google.android.gms.maps.SupportMapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-
-        <android.support.design.widget.FloatingActionButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:src="@android:drawable/ic_menu_mylocation"
-            android:onClick="myLocation"/>
 
     </RelativeLayout>
 
