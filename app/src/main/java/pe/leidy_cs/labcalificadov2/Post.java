@@ -10,9 +10,7 @@ public class Post {
 
     private String nombre;
 
-    private String lat;
-
-    private String longt;
+    private String email;
 
     private String latLng;
 
@@ -40,20 +38,12 @@ public class Post {
         this.nombre = nombre;
     }
 
-    public String getLat() {
-        return lat;
+    public String getEmail() {
+        return email;
     }
 
-    public void setLat(String lat) {
-        this.lat = lat;
-    }
-
-    public String getLongt() {
-        return longt;
-    }
-
-    public void setLongt(String longt) {
-        this.longt = longt;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getLatLng() {
@@ -70,8 +60,6 @@ public class Post {
                 "id='" + id + '\'' +
                 ", userid='" + userid + '\'' +
                 ", nombre='" + nombre + '\'' +
-                ", lat='" + lat + '\'' +
-                ", longt='" + longt + '\'' +
                 '}';
     }
 
