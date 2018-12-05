@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "879294525",
+    "firebase_url": "https://labcalificadov2.firebaseio.com",
+    "project_id": "labcalificadov2",
+    "storage_bucket": "labcalificadov2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879294525:android:485d457adfc45c54",
+        "android_client_info": {
+          "package_name": "pe.leidy_cs.labcalificadov2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "879294525-rf5ltgr29l85sdunr3fkkrr6m3qgtlgd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pe.leidy_cs.labcalificadov2",
+            "certificate_hash": "8ba65b7d5161024cd4d5fadeb0b770e50fd6fe74"
+          }
+        },
+        {
+          "client_id": "879294525-u8orf4gk9ddhc3gtqjoqt4hagm8ggv7n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_gvHP3k9leO1wOld1wK93JI3pSWmUmTY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "879294525-u8orf4gk9ddhc3gtqjoqt4hagm8ggv7n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
